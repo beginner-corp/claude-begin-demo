@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "arc sandbox",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.19.0",
+    "@architect/architect": "^11.0.7",
+    "@architect/functions": "^8.1.0"
+  },
+  "devDependencies": {
+    "@architect/eslint-config": "^3.0.0-RC.0",
+    "eslint": "^8.57.0"
+  },
+  "eslintConfig": {
+    "extends": "@architect/eslint-config"
+  }
+}

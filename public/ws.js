@@ -71,7 +71,12 @@ async function connect (url) {
 function send () {
   let userInput = document.getElementById('userInput').value
   if (ws && userInput) {
+    let accountID = sessionStorage.getItem('accountID')
+    let dataID = sessionStorage.getItem('dataID')
     document.getElementById('userInput').value = ''
+
+    let newURL = `/d/${dataID}`
+    window.history.pushState({}, '', newURL)
 
     let message = {
       role: 'user',
@@ -87,7 +92,8 @@ function send () {
     div.append('You: ' + userInput)
     responses.append(div)
 
-    ws.send(JSON.stringify(messages))
+    // TODO: nonce
+    ws.send(JSON.stringify({ accountID, dataID, messages }))
   }
 }
 

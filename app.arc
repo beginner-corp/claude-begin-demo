@@ -5,3 +5,11 @@ claude-begin-demo
 any /*
 
 @ws
+
+@tables
+data
+  accountID *
+  dataID **
+sessions
+  _idx *
+  ttl ttl

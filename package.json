@@ -6,7 +6,9 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.19.0",
     "@architect/architect": "^11.0.7",
-    "@architect/functions": "^8.1.0"
+    "@architect/functions": "^8.1.0",
+    "@enhance/arc-plugin-enhance": "^10.0.0",
+    "@enhance/arc-plugin-styles": "^5.0.5"
   },
   "devDependencies": {
     "@architect/eslint-config": "^3.0.0-RC.0",

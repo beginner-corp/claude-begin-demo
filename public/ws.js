@@ -25,14 +25,8 @@ async function connect (url) {
     }
     let { /* role, */ content, /* ts, id, */ updated } = message
 
-    let responses = document.querySelector('#claude')
-
     if (!message.content) {
-      let err = document.createElement('div')
-      err.setAttribute('class', 'error')
-      err.append(`Error: ${message.message || 'unknown error'}`)
-      responses.append(err)
-      return
+      console.error(message)
     }
 
     let msgIndex = messages.findIndex(m => m.role === 'assistant' && m.id === message.id)
@@ -43,17 +37,11 @@ async function connect (url) {
       messages[msgIndex] = message
     }
 
-    let id = `claude-response-${message.id}`
-    let query = `#${id}`
-    let item = document.querySelector(query)
-
-    let div = document.createElement('div')
-    div.setAttribute('id', id)
-    div.setAttribute('class', 'margin-bottom-8')
-    div.append('Claude: ' + content)
-
-    if (item) item.replaceWith(div)
-    else responses.append(div)
+    document.dispatchEvent(new CustomEvent('newmessage', {
+      detail: {
+        message,
+      },
+    }))
   })
 
   ws.addEventListener('error', console.error)
@@ -86,14 +74,14 @@ function send () {
     }
     messages.push(message)
 
-    let responses = document.querySelector('#claude')
-    let div = document.createElement('div')
-    div.setAttribute('class', 'margin-bottom-8')
-    div.append('You: ' + userInput)
-    responses.append(div)
-
     // TODO: nonce
     ws.send(JSON.stringify({ accountID, dataID, messages }))
+
+    document.dispatchEvent(new CustomEvent('newmessage', {
+      detail: {
+        message,
+      },
+    }))
   }
 }
 

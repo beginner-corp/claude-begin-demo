@@ -1,15 +1,16 @@
 @app
 claude-begin-demo
 
-@http
-any /*
-
 @ws
 
 @tables
-data
+lore
   accountID *
   dataID **
 sessions
   _idx *
   ttl ttl
+
+@plugins
+enhance/arc-plugin-enhance
+enhance/arc-plugin-styles

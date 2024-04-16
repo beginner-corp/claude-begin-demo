@@ -1,0 +1,32 @@
+{
+  "typeScale": {
+    "steps": 6,
+    "viewportMin": 320,
+    "viewportMax": 1500,
+    "baseMin": 16,
+    "baseMax": 18,
+    "scaleMin": "minor-third",
+    "scaleMax": "perfect-fourth"
+  },
+  "spaceScale": {
+    "steps": 13,
+    "viewportMin": 320,
+    "viewportMax": 1500,
+    "baseMin": 16,
+    "baseMax": 18,
+    "scaleMin": "minor-third",
+    "scaleMax": "perfect-fourth"
+  },
+  "theme": {
+    "accent": "#cf6246",
+    "fore": "#3d3929",
+    "back": "#f0eee5",
+    "dark": {
+      "back": "#23231f",
+      "accent": "#cf6246"
+    }
+  },
+  "queries": {
+    "lg": "52em"
+  }
+}

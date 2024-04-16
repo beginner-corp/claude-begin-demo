@@ -82,10 +82,10 @@ export async function handler (req) {
     messages.push(response)
 
     if (!data) data = await arc.tables()
-    let existing = await data.data.get({ accountID, dataID })
+    let existing = await data.lore.get({ accountID, dataID })
     // TODO: dedupe?
     if (existing?.messages) messages = existing.messages.concat(messages)
-    await data.data.put({
+    await data.lore.put({
       accountID,
       dataID,
       messages,

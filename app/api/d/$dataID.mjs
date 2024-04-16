@@ -19,9 +19,26 @@ export async function get (req) {
 
   const conversation = result.messages.sort((a, b) => a < b ? -1 : 1)
 
+  let previousSessions
+
+  let previousData = await data.lore.query({
+    KeyConditionExpression: '#accountID = :accountID',
+    ExpressionAttributeNames: { '#accountID': 'accountID' },
+    ExpressionAttributeValues: { ':accountID': accountID },
+  })
+
+  if (previousData.Items.length) {
+    previousSessions = previousData.Items.sort((a, b) => a.updated < b.updated ? 1 : -1)
+  }
+
+  console.log({ conversation })
+
   return {
     json: {
-      conversation,
+      accountID,
+      dataID,
+      messages: conversation,
+      previousSessions,
     },
   }
 }

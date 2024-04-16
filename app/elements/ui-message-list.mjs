@@ -1,6 +1,22 @@
-export default function MessageList ({ html }) {
+export default function MessageList ({ html, state }) {
+  const { store } = state
+  const { messages = [] } = store
+
+  const messagesMarkup = messages.map(m => {
+    return m.role === 'assistant'
+      ? `
+      <li id="${m.id}=${m.role}" class="flex justify-content-start">
+        <ui-assistant-message>${m.content}</ui-assistant-message>
+      </li>`
+      : `
+      <li id="${m.id}=${m.role}" class="flex justify-content-end">
+        <ui-user-message>${m.content}</ui-assistant-message>
+      </li>`
+  }).join('')
+
   return html`
-    <ol id="messagelist"></ol>
-    <script src="/_public/message-list.js"></script>
+    <ol class="list-none grid grid-col gap0">
+      ${messages.length ? messagesMarkup : ''}
+    </ol>
   `
 }

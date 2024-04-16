@@ -14,3 +14,6 @@ sessions
 @plugins
 enhance/arc-plugin-enhance
 enhance/arc-plugin-styles
+
+@enhance-styles
+config styleguide.json

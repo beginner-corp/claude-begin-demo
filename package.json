@@ -8,7 +8,10 @@
     "@architect/architect": "^11.0.7",
     "@architect/functions": "^8.1.0",
     "@enhance/arc-plugin-enhance": "^10.0.0",
-    "@enhance/arc-plugin-styles": "^5.0.5"
+    "@enhance/arc-plugin-styles": "^5.0.5",
+    "@enhance/custom-element": "^1.2.1",
+    "@enhance/element": "^1.4.3",
+    "@enhance/store": "^1.0.2"
   },
   "devDependencies": {
     "@architect/eslint-config": "^3.0.0-RC.0",

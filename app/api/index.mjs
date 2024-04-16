@@ -19,7 +19,6 @@ export async function get (req) {
   let { accountID } = session
   let dataID = rando()
 
-  let conversation
   let previousSessions
 
   let previousData = await data.lore.query({
@@ -43,7 +42,7 @@ export async function get (req) {
       accountID,
       dataID,
       previousSessions,
-      conversation,
+      messages: [],
     },
   }
 }

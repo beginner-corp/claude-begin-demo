@@ -83,8 +83,11 @@ export async function handler (req) {
 
     if (!data) data = await arc.tables()
     let existing = await data.lore.get({ accountID, dataID })
-    // TODO: dedupe?
-    if (existing?.messages) messages = existing.messages.concat(messages)
+    if (existing?.messages) {
+      let existingIDs = existing.messages.map(({ id }) => id)
+      let newMessages = messages.filter(({ id }) => !existingIDs.includes(id))
+      if (newMessages.length) messages = existing.messages.concat(newMessages)
+    }
     await data.lore.put({
       accountID,
       dataID,

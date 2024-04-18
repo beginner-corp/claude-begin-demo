@@ -1,7 +1,4 @@
-export default function ClaudeInterface ({ html /* state */ }) {
-  // const { store } = state
-  // const { accountID, dataID } = store
-
+export default function ClaudeInterface ({ html }) {
   return html`
     <style scope="global">
       body:has(#toggle:checked) {

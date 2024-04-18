@@ -1,6 +1,5 @@
 {
   ".eslintrc.js": ".eslintrc-c86a430838.js",
   "browser/api.mjs": "browser/api-373415ce03.mjs",
-  "browser/index.mjs": "browser/index-2614f72919.mjs",
-  "images/claude-logo.svg": "images/claude-logo-5df617e24e.svg"
+  "browser/index.mjs": "browser/index-2614f72919.mjs"
 }

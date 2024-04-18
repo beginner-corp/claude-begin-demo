@@ -80,7 +80,7 @@ export default function ClaudeInterface ({ html, state }) {
     <claude-config></claude-config>
 
     <header class="flex justify-content-center mbs4 mbe2 sticky-lg">
-      <img src="/_public/images/claude-logo.svg" alt="Claude logo" />
+      <claude-logo></claude-logo>
     </header>
     
     <section class="pi0 grid-lg gap0-lg mi-auto">

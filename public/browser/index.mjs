@@ -1367,6 +1367,11 @@ function AssistantMessage ({ html }) {
       .assistant {
         color: var(--accent);
       }
+
+      /* Messages from Claude come back with newline characters; this retains the formatting in the markup. */
+      p {
+        white-space: pre-line;
+      }
     </style>
     <span class="assistant font-bold text-1">Claude</span>
     <p>

@@ -1426,8 +1426,11 @@ function MessageList ({ html, state }) {
 function Input ({ html }) {
   return html`
     <style>
+      :host {
+        display: block;
+        padding-block: var(--space-0);
+      }
       form {
-        inset-block-end: 1em;
         inline-size: min(90vw, 48ch);
         background-color: var(--back);
         border: 0.5em solid var(--back);
@@ -1444,7 +1447,7 @@ function Input ({ html }) {
         color: white;
       }
     </style>
-    <form class="fixed z1 inset-i-0 mi-auto flex justify-content-center gap-2">
+    <form class="mi-auto flex justify-content-center gap-2">
       <input
         required
         autofocus

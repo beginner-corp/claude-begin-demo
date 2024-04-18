@@ -227,8 +227,8 @@ const TemplateMixin = (superclass) => class extends superclass {
     const template = document.getElementById(templateName);
     const html = this.html;
     const state = {
-      attrs: {},
-      store: {},
+      attrs:{},
+      store:{},
     };
     if (template) {
       this.template = template;

@@ -1,6 +1,6 @@
-export default function ClaudeInterface ({ html, state }) {
-  const { store } = state
-  const { accountID, dataID } = store
+export default function ClaudeInterface ({ html /* state */ }) {
+  // const { store } = state
+  // const { accountID, dataID } = store
 
   return html`
     <style scope="global">

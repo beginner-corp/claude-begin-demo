@@ -31,8 +31,6 @@ export async function get (req) {
     previousSessions = previousData.Items.sort((a, b) => a.updated < b.updated ? 1 : -1)
   }
 
-  console.log({ conversation })
-
   return {
     json: {
       accountID,

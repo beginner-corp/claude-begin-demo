@@ -27,6 +27,9 @@ module.exports = [
     },
   },
   {
-    ignores: [ 'scratch' ],
+    ignores: [
+      'scratch',
+      'public/browser/index.mjs',
+    ],
   },
 ]

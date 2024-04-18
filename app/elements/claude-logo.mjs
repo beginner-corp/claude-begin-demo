@@ -1,5 +1,6 @@
 export default function ClaudeLogo ({ html }) {
   return html`
+  <a href="/">
     <style>
       #wordmark {
         fill: var(--fore);
@@ -16,5 +17,6 @@ export default function ClaudeLogo ({ html }) {
         </clipPath>
       </defs>
     </svg>
+  </a>
   `
 }

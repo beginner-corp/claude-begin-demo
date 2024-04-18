@@ -23,18 +23,6 @@ export default function PreviousSessions ({ html, state }) {
   }).join('')
 
   return html`
-    <style>
-      nav,
-      ol {
-        background-color: white;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        nav {
-          background-color: #333;
-        }
-      }
-    </style>
     <nav class="p0">
       <h1 class="text-1 text0-lg font-bold mbe0">Previous sessions:</h1>
       ${previousSessions.length ? `
@@ -43,7 +31,7 @@ export default function PreviousSessions ({ html, state }) {
         </ol>
       ` : `
         <p class="text-1">
-          No previous sessions start. Start a conversation!
+          No previous sessions to show yet. Start a conversation!
         </p>
       `}
     </nav>

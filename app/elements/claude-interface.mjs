@@ -32,10 +32,17 @@ export default function ClaudeInterface ({ html, state }) {
       }
 
       aside {
+        background-color: white;
         border-radius: 0.25em;
         box-shadow: 0 4px 12px hsla(0deg 0% 0% / 0.125);
         max-block-size: calc(100vh - (var(--space-0) * 2));
         inset: var(--space-0);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        aside {
+          background-color: #333;
+        }
       }
 
       @media (width <= 52em) {

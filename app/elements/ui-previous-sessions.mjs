@@ -24,14 +24,14 @@ export default function PreviousSessions ({ html, state }) {
 
   return html`
     <nav class="p0">
-      <h1 class="text-1 text0-lg font-bold mbe0">Previous sessions:</h1>
+      <h1 class="text-1 text0-lg font-bold mbe0">Previous conversations</h1>
       ${previousSessions.length ? `
         <ol class="list-none">
           ${sessionsMarkup}
         </ol>
       ` : `
         <p class="text-1">
-          No previous sessions to show yet. Start a conversation!
+          No previous conversations to show yet. Let's start one!
         </p>
       `}
     </nav>

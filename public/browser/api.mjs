@@ -25,7 +25,7 @@ const handler = {
     }
 
     return true
-  },
+  }
 };
 
 _state.initialize = initialize;
@@ -33,7 +33,7 @@ _state.subscribe = subscribe;
 _state.unsubscribe = unsubscribe;
 const store$1 = new Proxy(_state, handler);
 
-function Store (initialState) {
+function Store(initialState) {
   if (initialState) {
     initialize(initialState);
   }
@@ -50,7 +50,7 @@ function merge (o, n) {
  * Function for initializing store with existing data
  * @param {object} initialState - object to be merged with internal state
  */
-function initialize (initialState) {
+function initialize(initialState) {
   if (initialState) {
     merge(_state, initialState);
   }
@@ -62,7 +62,7 @@ function initialize (initialState) {
  * @param {array} props - list props to listen to for changes
  * @return {number} returns current number of listeners
  */
-function subscribe (fn, props = []) {
+function subscribe(fn, props=[]) {
   return listeners.push({ fn, props })
 }
 
@@ -71,11 +71,11 @@ function subscribe (fn, props = []) {
  * @param {function} fn - function to unsubscribe from state updates
  *
  */
-function unsubscribe (fn) {
+function unsubscribe(fn) {
   return listeners.splice(listeners.findIndex(l => l.fn === fn), 1)
 }
 
-function notify () {
+function notify() {
   listeners.forEach(l => {
     const fn = l.fn;
     const props = l.props;
@@ -85,7 +85,7 @@ function notify () {
         .reduce((obj, key) => {
           return {
             ...obj,
-            [key]: _state[key],
+            [key]: _state[key]
           }
         }, {})
       : { ..._state };

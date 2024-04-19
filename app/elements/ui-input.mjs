@@ -28,7 +28,7 @@ export default function Input ({ html }) {
         autofocus
         name="userinput"
         type="text"
-        placeholder="Start a conversation"
+        placeholder="Message Claude"
         class="pi-2 pb-4 flex-grow"
       />
       <button

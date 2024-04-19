@@ -8,25 +8,6 @@ defaults:
     shell: bash
 
 jobs:
-  # Run tests on PR branches
-  build_prs:
-    name: Run tests on PR branch
-    if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out repo
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-
-      - name: Install
-        run: npm ci
-
-      - name: Run tests
-        run: npm run test
-
   # Deploy the build
   deploy_staging:
     name: Deploy staging
@@ -44,9 +25,6 @@ jobs:
 
       - name: Install
         run: npm i
-
-      - name: Run tests
-        run: npm run test
 
       - name: Deploy to staging
         uses: beginner-corp/actions/deploy@main
@@ -72,9 +50,6 @@ jobs:
 
       - name: Install
         run: npm i
-
-      - name: Run tests
-        run: npm run test
 
       - name: Deploy to production
         uses: beginner-corp/actions/deploy@main

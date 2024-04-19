@@ -18,6 +18,8 @@ export default function Head () {
         }
       </style>
       <link rel="icon" href="/_public/favicon.svg">
+      <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css">
+      <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
     </head>
     <body class="font-sans leading3">
 `

@@ -13,6 +13,10 @@ export default function UserMessage ({ html }) {
       .user {
         opacity: 0.75;
       }
+
+      p {
+        white-space: pre-line;
+      }
     </style>
     <span class="user font-bold text-1">You</span>
     <p>

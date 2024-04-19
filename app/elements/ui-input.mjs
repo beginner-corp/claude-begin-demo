@@ -23,14 +23,14 @@ export default function Input ({ html }) {
       }
     </style>
     <form class="mi-auto flex justify-content-center gap-2">
-      <input
+      <textarea
         required
         autofocus
         name="userinput"
         type="text"
         placeholder="Start a conversation"
         class="pi-2 pb-4 flex-grow"
-      />
+      ></textarea>
       <button
         type="submit"
         class="pi0 pb-4 font-medium"

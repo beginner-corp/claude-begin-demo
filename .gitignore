@@ -1,3 +1,6 @@
+node_modules/
+public/browser/
+public/static.json
 scratch
 .env
 public/static.json

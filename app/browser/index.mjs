@@ -21,15 +21,26 @@ enhance('ui-message-list', {
 
 enhance('ui-input', {
   api,
+
   connectedCallback () {
     this.form = this.querySelector('form')
-    this.input = this.form.querySelector('input')
+    this.input = this.form.querySelector('textarea')
+
+    // return/enter key will send, shift+return/enter will newline
+    this.input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault()
+        this.form.dispatchEvent(new Event('submit'))
+      }
+    })
+
     this.form.addEventListener('submit', e => {
       e.preventDefault()
       this.api.send(this.input.value)
       this.input.value = ''
     })
   },
+
   render (args) {
     return UIInput(args)
   },
@@ -38,6 +49,13 @@ enhance('ui-input', {
 class UIAssistantMessage extends CustomElement {
   constructor () {
     super()
+  }
+
+  connectedCallback () {
+    const code = this.querySelector('pre code.hljs')
+    if (code && window?.hljs) {
+      window.hljs.highlightElement(this.querySelector('code'))
+    }
   }
 
   render (args) {

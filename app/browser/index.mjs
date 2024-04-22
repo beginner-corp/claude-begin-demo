@@ -52,9 +52,9 @@ class UIAssistantMessage extends CustomElement {
   }
 
   connectedCallback () {
-    const code = this.querySelector('pre code.hljs')
-    if (code && window?.hljs) {
-      window.hljs.highlightElement(this.querySelector('code'))
+    const $code = this.querySelector('pre code.hljs')
+    if ($code && window?.hljs) {
+      window.hljs.highlightElement($code)
     }
   }
 

@@ -1,5 +1,6 @@
 import xss from 'xss'
-export default function MessageList ({ html, state }) {
+
+export default function MessageList({ html, state }) {
   const { store, instanceID } = state
   const { messages = [] } = store
   const fenceRegex = /```(\w*)\n([\s\S]*?)\n```/g
@@ -26,6 +27,10 @@ export default function MessageList ({ html, state }) {
       : `
       <li id="${m.id}-${m.role}" class="flex justify-content-end">
         <ui-user-message>${addInlineCodeBlocks(addCodeBlocks(m.content))}</ui-assistant-message>
+      </li>`
+      : `
+      <li id="${m.id}-${m.role}" class="flex justify-content-end">
+        <ui-user-message>${m.content}</ui-assistant-message>
       </li>`
   }).join('')
 

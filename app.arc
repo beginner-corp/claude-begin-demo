@@ -4,7 +4,7 @@ claude-begin-demo
 @ws
 
 @tables
-lore
+prompts
   accountID *
   dataID **
 sessions

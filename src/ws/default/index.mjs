@@ -82,13 +82,13 @@ export async function handler (req) {
     messages.push(response)
 
     if (!data) data = await arc.tables()
-    let existing = await data.lore.get({ accountID, dataID })
+    let existing = await data.prompts.get({ accountID, dataID })
     if (existing?.messages) {
       let existingIDs = existing.messages.map(({ id }) => id)
       let newMessages = messages.filter(({ id }) => !existingIDs.includes(id))
       if (newMessages.length) messages = existing.messages.concat(newMessages)
     }
-    await data.lore.put({
+    await data.prompts.put({
       accountID,
       dataID,
       messages,

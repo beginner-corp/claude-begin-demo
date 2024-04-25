@@ -2,7 +2,7 @@
 import Store from '@enhance/store'
 
 const store = Store({
-  messages: [],
+  messages: JSON.parse(document.getElementById('initialMessages').textContent),
 })
 
 export default function API ({ wssurl }) {

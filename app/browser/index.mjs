@@ -15,7 +15,7 @@ const api = API({ wssurl })
 
 enhance('ui-message-list', {
   api,
-  keys: [ 'messages' ],
+  keys: ['messages'],
   connectedCallback() {
     // Observe the scrollanchor element and keep it in view;
     // this keeps incoming message content in view when overflowing the scroll area.
@@ -29,14 +29,14 @@ enhance('ui-message-list', {
 
     intersectionObserver.observe(document.getElementById('scrollanchor'))
   },
-  render (args) {
+  render(args) {
     return UIMessageList(args)
   },
 })
 
 enhance('ui-input', {
   api,
-  connectedCallback () {
+  connectedCallback() {
     this.form = this.querySelector('form')
     this.input = this.form.querySelector('input')
     this.form.addEventListener('submit', e => {
@@ -45,18 +45,18 @@ enhance('ui-input', {
       this.input.value = ''
     })
   },
-  render (args) {
+  render(args) {
     return UIInput(args)
   },
 })
 
 class UIAssistantMessage extends CustomElement {
-  constructor () {
+  constructor() {
     super()
     this.debounce = this.debounce.bind(this)
   }
 
-  render (args) {
+  render(args) {
     return UIAssistantMessageElement(args)
   }
 
@@ -95,11 +95,11 @@ class UIAssistantMessage extends CustomElement {
 customElements.define('ui-assistant-message', UIAssistantMessage)
 
 class UIUserMessage extends CustomElement {
-  constructor () {
+  constructor() {
     super()
   }
 
-  render (args) {
+  render(args) {
     return UIUserMessageElement(args)
   }
 }

@@ -1,6 +1,6 @@
 import xss from 'xss'
 
-export default function ClaudeInterface ({ html, state }) {
+export default function ClaudeInterface({ html, state }) {
   const { store } = state
   const { messages } = store
 
@@ -84,6 +84,11 @@ export default function ClaudeInterface ({ html, state }) {
         #toggle:checked ~ #icon-menu {
           display: none;
         }
+      }
+
+      #scrollanchor {
+        overflow-anchor: auto;
+        block-size: 1px;
       }
 
     </style>

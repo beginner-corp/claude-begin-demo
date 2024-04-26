@@ -1,4 +1,4 @@
-export default function MessageList ({ html, state }) {
+export default function MessageList({ html, state }) {
   const { store, instanceID } = state
   const { messages = [] } = store
 
@@ -18,8 +18,5 @@ export default function MessageList ({ html, state }) {
     <ol class="list-none grid grid-col gap0" id="${instanceID}">
       ${messages.length ? messagesMarkup : ''}
     </ol>
-    <script type="application/json" id="initialMessages">
-      ${JSON.stringify(messages)}
-    </script>
   `
 }

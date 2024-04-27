@@ -26,11 +26,7 @@ export default function MessageList({ html, state }) {
       </li>`
       : `
       <li id="${m.id}-${m.role}" class="flex justify-content-end">
-        <ui-user-message>${addInlineCodeBlocks(addCodeBlocks(m.content))}</ui-assistant-message>
-      </li>`
-      : `
-      <li id="${m.id}-${m.role}" class="flex justify-content-end">
-        <ui-user-message>${m.content}</ui-assistant-message>
+        <ui-user-message>${addInlineCodeBlocks(addCodeBlocks(m.content))}</ui-user-message>
       </li>`
   }).join('')
 
@@ -38,8 +34,5 @@ export default function MessageList({ html, state }) {
     <ol class="list-none grid grid-col gap0" id="${instanceID}">
       ${messages.length ? messagesMarkup : ''}
     </ol>
-    <script type="application/json" id="initialMessages">
-      ${JSON.stringify(messages)}
-    </script>
   `
 }

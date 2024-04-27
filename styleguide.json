@@ -26,6 +26,10 @@
       "accent": "#cf6246"
     }
   },
+  "radii": [
+    2,
+    4
+  ],
   "queries": {
     "lg": "52em"
   }

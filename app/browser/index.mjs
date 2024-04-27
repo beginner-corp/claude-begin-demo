@@ -29,7 +29,7 @@ enhance('ui-message-list', {
 
     intersectionObserver.observe(document.getElementById('scrollanchor'))
   },
-  render (args) {
+  render(args) {
     return UIMessageList(args)
   },
 })

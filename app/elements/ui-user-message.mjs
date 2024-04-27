@@ -18,6 +18,5 @@ export default function UserMessage ({ html }) {
     <p>
       <slot></slot>
     </p>
-    
   `
 }

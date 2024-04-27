@@ -12,12 +12,18 @@ export default function Head () {
       <title></title>
       ${styleTag()}
       <style>
+        @import url('https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.css') screen and (prefers-color-scheme: dark);
+        @import url('https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github.css') screen and (prefers-color-scheme: light);
         body {
           background-color: var(--back);
           color: var(--fore);
         }
       </style>
       <link rel="icon" href="/_public/favicon.svg">
+      <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+      <script>
+        hljs.configure({ignoreUnescapedHTML: true})
+      </script>
     </head>
     <body class="font-sans leading3">
 `

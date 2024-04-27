@@ -98,8 +98,9 @@ function notify() {
 
 /* globals window WebSocket */
 
+const initialMessages = document.getElementById('initialMessages')?.textContent;
 const store = Store({
-  messages: JSON.parse(document.getElementById('initialMessages').textContent),
+  messages: initialMessages ? JSON.parse(initialMessages) : []
 });
 
 function API ({ wssurl }) {

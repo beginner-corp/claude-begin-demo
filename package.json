@@ -11,7 +11,8 @@
     "@enhance/arc-plugin-styles": "^5.0.5",
     "@enhance/custom-element": "^1.2.2",
     "@enhance/element": "^1.4.4",
-    "@enhance/store": "^1.0.2"
+    "@enhance/store": "^1.0.2",
+    "xss": "^1.0.15"
   },
   "devDependencies": {
     "@architect/eslint-config": "^3.0.0-RC.4",

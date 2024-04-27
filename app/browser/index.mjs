@@ -16,6 +16,19 @@ const api = API({ wssurl })
 enhance('ui-message-list', {
   api,
   keys: [ 'messages' ],
+  connectedCallback() {
+    // Observe the scrollanchor element and keep it in view;
+    // this keeps incoming message content in view when overflowing the scroll area.
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      const [{ target: scrollAnchor }] = entries
+
+      if (!scrollanchor.isIntersecting) {
+        scrollanchor.scrollIntoView()
+      }
+    })
+
+    intersectionObserver.observe(document.getElementById('scrollanchor'))
+  },
   render (args) {
     return UIMessageList(args)
   },

@@ -1,8 +1,18 @@
-export default function ClaudeInterface ({ html }) {
+import xss from 'xss'
+
+export default function ClaudeInterface ({ html, state }) {
+  const { store } = state
+  const { messages } = store
+
   return html`
     <style scope="global">
       body:has(#toggle:checked) {
         overflow: hidden;
+      }
+
+      #scrollanchor {
+        overflow-anchor: auto;
+        block-size: 1px;
       }
     </style>
     <style>
@@ -103,6 +113,7 @@ export default function ClaudeInterface ({ html }) {
 
         <main data-wssurl="${process.env.ARC_WSS_URL}" class="overflow-y-scroll-lg">
           <ui-message-list class="p0-lg"></ui-message-list>
+          <div id="scrollanchor"></div>
         </main>
       </section>
 
@@ -111,5 +122,8 @@ export default function ClaudeInterface ({ html }) {
     </div>
 
     <script type="module" src="/_public/browser/index.mjs"></script>
+    <script type="application/json" id="initialMessages">
+      ${JSON.stringify(xss(messages))}
+    </script>
   `
 }

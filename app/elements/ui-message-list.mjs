@@ -33,8 +33,5 @@ export default function MessageList ({ html, state }) {
     <ol class="list-none grid grid-col gap0" id="${instanceID}">
       ${messages.length ? messagesMarkup : ''}
     </ol>
-    <script type="application/json" id="initialMessages">
-      ${JSON.stringify(xss(messages))}
-    </script>
   `
 }

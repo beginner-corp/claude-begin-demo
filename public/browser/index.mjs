@@ -3161,9 +3161,6 @@ function MessageList ({ html, state }) {
     <ol class="list-none grid grid-col gap0" id="${instanceID}">
       ${messages.length ? messagesMarkup : ''}
     </ol>
-    <script type="application/json" id="initialMessages">
-      ${JSON.stringify(xss(messages))}
-    </script>
   `
 }
 
@@ -3219,6 +3216,18 @@ const api = API({ wssurl });
 enhance('ui-message-list', {
   api,
   keys: [ 'messages' ],
+  connectedCallback() {
+    // Observe the scrollanchor element and keep it in view;
+    // this keeps incoming message content in view when overflowing the scroll area.
+    const intersectionObserver = new IntersectionObserver((entries) => {
+
+      if (!scrollanchor.isIntersecting) {
+        scrollanchor.scrollIntoView();
+      }
+    });
+
+    intersectionObserver.observe(document.getElementById('scrollanchor'));
+  },
   render (args) {
     return MessageList(args)
   },

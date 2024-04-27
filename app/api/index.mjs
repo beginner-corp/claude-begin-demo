@@ -21,7 +21,7 @@ export async function get (req) {
 
   let previousSessions
 
-  let previousData = await data.lore.query({
+  let previousData = await data.prompts.query({
     KeyConditionExpression: '#accountID = :accountID',
     ExpressionAttributeNames: { '#accountID': 'accountID' },
     ExpressionAttributeValues: { ':accountID': accountID },

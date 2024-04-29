@@ -1,5 +1,4 @@
 /* globals window document customElements */
-import xss from 'xss'
 import CustomElement from '@enhance/custom-element'
 import enhance from '@enhance/element'
 
@@ -53,7 +52,6 @@ enhance('ui-input', {
 class UIAssistantMessage extends CustomElement {
   constructor() {
     super()
-    this.debounce = this.debounce.bind(this)
   }
 
   render(args) {
@@ -70,16 +68,6 @@ class UIAssistantMessage extends CustomElement {
 
   updatedChanged() {
     this.syntaxHighlight()
-  }
-
-  debounce(func, delay=1000) {
-    let timeoutId
-    return function(...args) {
-      clearTimeout(timeoutId)
-      timeoutId = setTimeout(() => {
-        func.apply(this, args)
-      }, delay)
-    }
   }
 
   syntaxHighlight() {

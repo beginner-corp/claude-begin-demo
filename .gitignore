@@ -3,3 +3,4 @@ node_modules
 public/browser/*.mjs
 public/static.json
 scratch
+.DS_Store

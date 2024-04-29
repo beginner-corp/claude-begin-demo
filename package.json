@@ -4,17 +4,17 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.20.7",
-    "@architect/functions": "^8.1.0",
-    "@enhance/arc-plugin-enhance": "^11.0.0",
+    "@anthropic-ai/sdk": "^0.20.8",
+    "@architect/functions": "^8.1.1",
+    "@enhance/arc-plugin-enhance": "^11.0.1",
     "@enhance/arc-plugin-styles": "^5.0.6",
     "@enhance/custom-element": "^1.2.2",
     "@enhance/element": "^1.4.4",
     "@enhance/store": "^1.0.2"
   },
   "devDependencies": {
-    "@architect/architect": "^11.0.10",
-    "@architect/eslint-config": "^3.0.0-RC.4",
+    "@architect/architect": "^11.0.11",
+    "@architect/eslint-config": "^3.0.0",
     "@begin/deploy": "^0.22.3",
     "eslint": "^9.1.1"
   },

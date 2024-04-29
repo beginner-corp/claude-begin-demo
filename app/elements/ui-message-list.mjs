@@ -3,8 +3,8 @@ import xss from 'xss'
 export default function MessageList({ html, state }) {
   const { store, instanceID } = state
   const { messages = [] } = store
-  const fenceRegex = /```(\w*)\n([\s\S]*?)\n```/g
-  const inlineRegex = /(\s\`{1})(.+?)(\`{1})/g
+  const fenceRegex = /`{3}([\w]*)\n([\S\s]+?)\n`{3}/g
+  const inlineRegex = /(\s`{1})(?!`{2})(.+?)(?<!`{2})`{1}/g
 
   function addCodeBlocks (message) {
     return message.replace(fenceRegex, (match, lang, code) => {

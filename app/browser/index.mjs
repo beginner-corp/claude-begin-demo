@@ -62,10 +62,6 @@ class UIAssistantMessage extends CustomElement {
     return [ 'updated' ]
   }
 
-  connectedCallback() {
-    this.syntaxHighlight()
-  }
-
   updatedChanged() {
     this.syntaxHighlight()
   }

@@ -12,8 +12,8 @@ export default function Head () {
       <title></title>
       ${styleTag()}
       <style>
-        @import url('https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.css') screen and (prefers-color-scheme: dark);
-        @import url('https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github.css') screen and (prefers-color-scheme: light);
+        @import url('/_public/styles/github-dark.min.css') screen and (prefers-color-scheme: dark);
+        @import url('/_public/styles/github.min.css') screen and (prefers-color-scheme: light);
         body {
           background-color: var(--back);
           color: var(--fore);

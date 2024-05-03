@@ -20,7 +20,7 @@ export default function Head () {
         }
       </style>
       <link rel="icon" href="/_public/favicon.svg">
-      <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+      <script src="/_public/highlight.min.js"></script>
       <script>
         hljs.configure({ignoreUnescapedHTML: true})
       </script>

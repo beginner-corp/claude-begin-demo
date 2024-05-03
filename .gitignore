@@ -1,5 +1,6 @@
 .env
 node_modules
-public/browser/
+public/browser/*.mjs
 public/static.json
 scratch
+.DS_Store

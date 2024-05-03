@@ -1,3 +1,5 @@
+import xss from 'xss'
+
 export default function ClaudeInterface({ html, state }) {
   const { store } = state
   const { messages } = store
@@ -6,6 +8,11 @@ export default function ClaudeInterface({ html, state }) {
     <style scope="global">
       body:has(#toggle:checked) {
         overflow: hidden;
+      }
+
+      #scrollanchor {
+        overflow-anchor: auto;
+        block-size: 1px;
       }
     </style>
     <style>
@@ -120,9 +127,8 @@ export default function ClaudeInterface({ html, state }) {
     </div>
 
     <script type="module" src="/_public/browser/index.mjs"></script>
-
     <script type="application/json" id="initialMessages">
-      ${JSON.stringify(messages)}
+      ${JSON.stringify(xss(messages))}
     </script>
   `
 }

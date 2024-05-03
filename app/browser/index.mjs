@@ -1,4 +1,4 @@
-/* globals document customElements */
+/* globals window document customElements */
 import CustomElement from '@enhance/custom-element'
 import enhance from '@enhance/element'
 
@@ -10,6 +10,7 @@ import UIInput from '../elements/ui-input.mjs'
 
 const wssurl = document.querySelector('main').dataset.wssurl
 const api = API({ wssurl })
+
 
 enhance('ui-message-list', {
   api,
@@ -55,6 +56,23 @@ class UIAssistantMessage extends CustomElement {
 
   render(args) {
     return UIAssistantMessageElement(args)
+  }
+
+  static get observedAttributes () {
+    return [ 'updated' ]
+  }
+
+  updatedChanged() {
+    this.syntaxHighlight()
+  }
+
+  syntaxHighlight() {
+    const $code = this.querySelectorAll('code.hljs')
+    for (const code of $code) {
+      if (!code.dataset.highlighted) {
+        window?.hljs?.highlightElement(code)
+      }
+    }
   }
 }
 

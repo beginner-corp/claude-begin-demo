@@ -12,12 +12,18 @@ export default function Head () {
       <title></title>
       ${styleTag()}
       <style>
+        @import url('/_public/styles/github-dark.min.css') screen and (prefers-color-scheme: dark);
+        @import url('/_public/styles/github.min.css') screen and (prefers-color-scheme: light);
         body {
           background-color: var(--back);
           color: var(--fore);
         }
       </style>
       <link rel="icon" href="/_public/favicon.svg">
+      <script src="/_public/highlight.min.js"></script>
+      <script>
+        hljs.configure({ignoreUnescapedHTML: true})
+      </script>
     </head>
     <body class="font-sans leading3">
 `

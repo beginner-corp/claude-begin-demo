@@ -1,8 +1,9 @@
 /* globals window WebSocket */
 import Store from '@enhance/store'
 
+const initialMessages = document.getElementById('initialMessages')?.textContent
 const store = Store({
-  messages: JSON.parse(document.getElementById('initialMessages').textContent),
+  messages: initialMessages ? JSON.parse(initialMessages) : []
 })
 
 export default function API ({ wssurl }) {
